@@ -1,2 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("What is C# | Why do we use C# ");
+using System;
+
+class CreateAndDebugDemo
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("How to create and C# console application");
+    }
+}
