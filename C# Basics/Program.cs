@@ -1,18 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-class Program
+class Floating_Point_Demo
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("C# Integer Type");
+        Console.WriteLine("C# floating point data type");
 
-        int a;
+        float f1 = 1.2f;
+        float f2 = 1.3f;
 
-        // Size of the int data type
-        Console.WriteLine("Size of the int data type is: {0}", sizeof(int));
+        // Range of float data type
+        Console.WriteLine("Range of float data type: {0} to {1}", float.MinValue, float.MaxValue);
 
-        // Range of the int data type
-        Console.WriteLine("Range of the int data type is ${0} to {1}", int.MinValue, int.MaxValue);
+        // Verify the equality using equals method
+        if (f1.Equals(f2))
+        {
+            Console.WriteLine("Variables f1 and f2 are equals");
+        } else
+        {
+            Console.WriteLine("Variables f1 and f2 are not equals");
+        }
     }
 }
