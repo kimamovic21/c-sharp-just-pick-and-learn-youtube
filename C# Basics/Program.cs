@@ -1,22 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-class Boolean_and_character_demo
+class Object_data_type_demo
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Boolean and character data types");
+        Console.WriteLine("Object data type");
 
-        // Syntax
-        bool boolVar;
+        // Declare
+        object obj;
 
-        // Example 1: Verify TrueString and FalseString
-        Console.WriteLine("Value of TrueString: {0}", bool.TrueString);
-        Console.WriteLine("Value of FalseString: {0}", bool.FalseString);
+        int a = 20;
+        Console.WriteLine(a.GetType());
 
-        // Example 2: isNumber method
-        char charVar = '3';
-        bool result = char.IsNumber(charVar);
-        Console.WriteLine("Is it a number? : {0}", result);
+        string str = "Hello...";
+        obj = str;
+        Console.WriteLine(obj);
+
+        // Boxing - Converting value type to object type
+        obj = a;
+
+        // Unboxing - Converting object type to value type 
+        a = (int)obj;
     }
 }
