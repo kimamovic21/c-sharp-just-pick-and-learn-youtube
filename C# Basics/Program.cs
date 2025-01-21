@@ -1,10 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-class CreateAndDebugDemo
+class Compilation_Demo
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("How to create and C# console application");
+        Console.WriteLine("Compilation in C#");
+        //Console.WriteLine("This is error message in C#")
     }
 }
