@@ -1,44 +1,57 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-class String_data_type_demo
+class Arithmetic_Operators
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("String data type \n");
-
-        // Instantiate a string
-        
-        string name = "C# tutorial";
-        Console.WriteLine("String created by assigning a string literal: {0} \n", name);
+        Console.WriteLine("Arithmetic Operators \n");
 
 
-        char[] charArray = { 'C', '#', ' ', 't', 'u', 't', 'o', 'r', 'i', 'a', 'l'};
-        string stringFromChar = new string(charArray);
-        Console.WriteLine("String created by calling a String class constructor: {0} \n", stringFromChar);
+        // Increment and decrement operators
+        int x = 0;
 
-        string string1 = "C#";
-        string string2 = " tutorial";
-        string string3 = string1 + string2;
-        Console.WriteLine("String created by using the string concatenation operator: {0} \n", string3);
+        // Prefix increment operator
+        //int y = ++x;
+        //int y = --x;
 
-        string newName = name.Replace("C#", ".NET");
-        Console.WriteLine("String created by calling a method that returns a string");
-        Console.WriteLine("old value: {0}", name);
-        Console.WriteLine("new value: {0}", newName);
+        // Postfix increment operator
+        //int y = x++;
+        int y = x--;
 
-        Console.WriteLine("\nString created by calling a formatting that returns a string");
-        string formattedString = string.Format("old value: {0}, new value {1}", name, newName);
-        Console.WriteLine(formattedString);
+        Console.WriteLine("Unary increment and decrement operator demo");
+        Console.WriteLine($"x = {x}");
+        Console.WriteLine($"y = {y}");
 
-        // Operations
-        string originalString = "I am original string...";
-        string modifiedString = originalString.Insert(originalString.Length, " and I am inserted string");
-        Console.WriteLine(originalString);
-        Console.WriteLine(modifiedString);
+        int c = -10;
+        Console.WriteLine($"c = {c}");
 
-        string removedString = modifiedString.Remove(originalString.Length);
-        Console.WriteLine(removedString);
+        float operand1 = 100;
+        float operand2 = 10;
+        float result;
+
+        Console.WriteLine("Operand 1: " + operand1);
+        Console.WriteLine("Operand 2: " + operand2);
+
+        // Addition
+        result = operand1 + operand2;
+        Console.WriteLine($"Addition: {result}");
+
+        // Subtraction
+        result = operand1 - operand2;
+        Console.WriteLine($"Subtraction: {result}");
+
+        // Multiplication
+        result = operand1 * operand2;
+        Console.WriteLine($"Multiplication: {result}");
+
+        // Division
+        result = operand1 / operand2;
+        Console.WriteLine($"Division: {result}");
+
+        // Remainder
+        result = operand1 % operand2;
+        Console.WriteLine($"Remainder: {result}");
 
         Console.ReadLine();
     }
