@@ -1,36 +1,61 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
+﻿Console.WriteLine("Arrays in C#");
 
-class Comparison_Operators
+// Declaration
+int[] intArray; // int array
+string[] strArray; // string array
+
+// Initialization
+intArray = new int[5]; // int array with 5 elements
+strArray = new string[3]; // string array with 3 elements
+
+// Store the values
+intArray[0] = 1;
+intArray[1] = 2;
+intArray[2] = 3;
+intArray[3] = 4;
+intArray[4] = 5;
+
+// Array declaration, creation and storing the values in a single statement
+
+// Option 1
+int[] intArray2 = new int[] { 1, 2, 3, 4, 5 };
+
+// Option 2
+int[] intArray3 = { 1, 2, 3, 4, 5 };
+
+// Retrieving the values
+Console.WriteLine("1st element in array: " + intArray[0]);
+
+// Printing all the elements in the array
+Console.WriteLine("\nFor each loop");
+foreach (var item in intArray)
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Comparison Operators \n");
+    Console.WriteLine(item);
+};
 
-        int operand = 100;
-        //int operand = 200;
-        int operand2 = 200;
-        bool result;
+// Multi-dimensional arrays
+// 2D array
+// 2D array with 2 rows and 3 columns
+int[,] twoDimensionalArray = new int[2, 3]
+{
+    { 1, 2, 3},
+    { 4, 5, 6}
+};
+// Acces item in array
+Console.WriteLine(twoDimensionalArray);
+Console.WriteLine(twoDimensionalArray[0, 1]);
 
-        Console.WriteLine("operand: " + operand);
-        Console.WriteLine("operand2: " + operand2);
+// 3-Dimensional Array
+int[,,] threeDimensionalArray = new int[2, 1, 2]
+{
+ { {1, 2} },
+ { {3, 4} }
+};
+Console.WriteLine(threeDimensionalArray);
+Console.WriteLine(threeDimensionalArray[0, 0, 1]);
 
-        Console.WriteLine("Less than Operator");
-        result = operand < operand2;
-        Console.WriteLine(result);
+// Jagged array
+int[][] jaggedArray = new int[3][];
+Console.WriteLine(jaggedArray);
 
-        Console.WriteLine("Greater than Operator");
-        result = operand > operand2;
-        Console.WriteLine(result);
-
-        Console.WriteLine("Less than or equal Operator");
-        result = operand <= operand2;
-        Console.WriteLine(result);
-
-        Console.WriteLine("Greater than or equal Operator");
-        result = operand >= operand2;
-        Console.WriteLine(result);
-
-        Console.ReadLine();
-    }
-}
+Console.ReadLine();
