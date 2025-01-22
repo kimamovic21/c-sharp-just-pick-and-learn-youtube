@@ -1,57 +1,35 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-class Arithmetic_Operators
+class Comparison_Operators
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Arithmetic Operators \n");
+        Console.WriteLine("Comparison Operators \n");
 
+        int operand = 100;
+        //int operand = 200;
+        int operand2 = 200;
+        bool result;
 
-        // Increment and decrement operators
-        int x = 0;
+        Console.WriteLine("operand: " + operand);
+        Console.WriteLine("operand2: " + operand2);
 
-        // Prefix increment operator
-        //int y = ++x;
-        //int y = --x;
+        Console.WriteLine("Less than Operator");
+        result = operand < operand2;
+        Console.WriteLine(result);
 
-        // Postfix increment operator
-        //int y = x++;
-        int y = x--;
+        Console.WriteLine("Greater than Operator");
+        result = operand > operand2;
+        Console.WriteLine(result);
 
-        Console.WriteLine("Unary increment and decrement operator demo");
-        Console.WriteLine($"x = {x}");
-        Console.WriteLine($"y = {y}");
+        Console.WriteLine("Less than or equal Operator");
+        result = operand <= operand2;
+        Console.WriteLine(result);
 
-        int c = -10;
-        Console.WriteLine($"c = {c}");
-
-        float operand1 = 100;
-        float operand2 = 10;
-        float result;
-
-        Console.WriteLine("Operand 1: " + operand1);
-        Console.WriteLine("Operand 2: " + operand2);
-
-        // Addition
-        result = operand1 + operand2;
-        Console.WriteLine($"Addition: {result}");
-
-        // Subtraction
-        result = operand1 - operand2;
-        Console.WriteLine($"Subtraction: {result}");
-
-        // Multiplication
-        result = operand1 * operand2;
-        Console.WriteLine($"Multiplication: {result}");
-
-        // Division
-        result = operand1 / operand2;
-        Console.WriteLine($"Division: {result}");
-
-        // Remainder
-        result = operand1 % operand2;
-        Console.WriteLine($"Remainder: {result}");
+        Console.WriteLine("Greater than or equal Operator");
+        result = operand >= operand2;
+        Console.WriteLine(result);
 
         Console.ReadLine();
     }
