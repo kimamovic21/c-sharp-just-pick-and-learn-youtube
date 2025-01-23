@@ -1,17 +1,20 @@
-﻿class Negation_Operator
+﻿class Logical_And_Operator
 {
     public static void Main(string[] args)
     {
-        bool isOnTime = true;
+        Console.WriteLine("Conditional Logical AND operator - &&");
+        Console.WriteLine("Operand1 = true, Operand2 = true, Result={0}", true && true);
+        Console.WriteLine("Operand1 = true, Operand2 = false, Result={0}", true && false);
+        Console.WriteLine("Operand1 = false, Operand2 = true, Result={0}", false && true);
+        Console.WriteLine("Operand1 = false, Operand2 = false, Result={0}", false && false);
 
-        if (!isOnTime)
-        {
-            Console.WriteLine("The student is marked as absent");
-            
-        } else
-        {
-            Console.WriteLine("The student is marked as present");
-        }
+        Console.WriteLine("\nLogical AND operator - &");
+        Console.WriteLine("Operand1 = true, Operand2 = true, Result={0}", true && true);
+        Console.WriteLine("Operand1 = true, Operand2 = false, Result={0}", true && false);
+        Console.WriteLine("Operand1 = false, Operand2 = true, Result={0}", false && true);
+        Console.WriteLine("Operand1 = false, Operand2 = false, Result={0}", false && false);
+
+
         Console.ReadLine();
     }
 }   
