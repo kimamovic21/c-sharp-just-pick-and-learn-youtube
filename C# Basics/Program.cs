@@ -1,36 +1,24 @@
-﻿namespace Variables_Overview
+﻿namespace Constants_Overview
 {
     internal class Program
     {
+        // Declare constants
+        public const double Rate = 2.0;
+        //Rate = 3.0;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Simple Interest Calculator");
 
-            // Variables
-            // Variable declaration - Integer type
-            // int num1, num2, sum;
-            int num1 = 100;
-            int num2 = 100;
-            int sum = num1 + num1;
+            Console.WriteLine("Enter the principle amount: ");
+            double principle = Convert.ToDouble(Console.ReadLine());
 
-            // String type variable
-            string str;
+            Console.WriteLine("Enter the number of years: ");
+            double time = Convert.ToDouble(Console.ReadLine());
 
-            // Variable name can start with letter or underscore
-            int age;
-            int _name;
-
-            // Variable name can't start with a special character
-            // int #grade;
-
-            // Variable name can't start with a number
-            // int 2grade;
-
-            // No spaces
-            // int grade 2;
-
-            // Variable names are case sensitive
-            int phone, Phone;
+            double simpleInterest = (principle * time * Rate) / 100;
+            Console.WriteLine("Simple Interest: " + simpleInterest);
+            Console.ReadLine();
         }
     }
 }    
