@@ -1,3 +1,17 @@
-﻿Console.WriteLine("Logical operators in C#");
+﻿class Negation_Operator
+{
+    public static void Main(string[] args)
+    {
+        bool isOnTime = true;
 
-Console.ReadLine();
+        if (!isOnTime)
+        {
+            Console.WriteLine("The student is marked as absent");
+            
+        } else
+        {
+            Console.WriteLine("The student is marked as present");
+        }
+        Console.ReadLine();
+    }
+}   
