@@ -1,10 +1,10 @@
-﻿namespace Parameterized_Constructor
+﻿namespace Private_Constructor 
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Parameterized Constructor in C# ");
+            Console.WriteLine("Private Constructor in C#");
 
             // Creating object of Student class
             Student student = new Student("Kerim", 28, 90.0);
@@ -23,6 +23,12 @@
             Console.WriteLine($"Name: {student2.Name}");
             Console.WriteLine($"Age: {student2.Age}");
             Console.WriteLine($"Grade: {student2.Grade}");
+
+            // Display subject informations
+            Console.WriteLine("\nSubject informations:");
+            Subject subject = Subject.CreateStudent("Programming");
+
+            Console.WriteLine($"Subject Name: {subject}");
 
             Console.ReadKey();
         }

@@ -1,4 +1,4 @@
-namespace Parameterized_Constructor
+namespace Private_Constructor 
 {
     class Student
     {
