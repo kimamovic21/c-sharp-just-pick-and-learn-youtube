@@ -1,4 +1,4 @@
-namespace Static_Constructor
+namespace Copy_Constructor
 {
     class Subject
     {
