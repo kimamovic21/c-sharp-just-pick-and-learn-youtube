@@ -1,26 +1,33 @@
-﻿namespace Polymorphism
+﻿namespace Abstraction
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Polymorphism in C#");
+            Console.WriteLine("Abstraction in C#");
 
-            Student student1 = new Student()
+            // Using abstraction to wrk with different types of students
+            Student undergraduateStudent = new UndergraduateStudent()
             {
                 Name = "Kerim",
-                Age = 28
+                Age = 28,
+                Major = "Computer Science"
             };
 
-            // Call the overloaded methods
-            student1.DisplayInformation();
-            // Calls the first method
+            Student graduateStudent = new GraduateStudent()
+            {
+                Name = "John",
+                Age = 30,
+                ResearchArea = "Artificial Intelligence"
+            };
 
-            student1.DisplayInformation("Student Information");
-            // Calls the second method
+            // Common interface for displaying student information
+            undergraduateStudent.WelcomeMessage();
 
-            student1.DisplayInformation("Student Information", 90);
-            // Calls the third method
+            Console.WriteLine("\n-------------------");
+
+            undergraduateStudent.DisplayInformation();
+            graduateStudent.DisplayInformation();
 
             Console.ReadKey();
         }

@@ -1,23 +1,17 @@
-namespace Polymorphism
+namespace Abstraction
 {
-    class Student
+    abstract class Student
     {
         public string Name { get; set; }
         public int Age { get; set; }
 
-        public void DisplayInformation()
-        {
-            Console.WriteLine($"Name: {Name}, Age: {Age}");
-        }
+        // Abstract method for displaying student information
+        public abstract void DisplayInformation();
 
-        public void DisplayInformation(string message)
+        // Non-abstract method
+        public void WelcomeMessage()
         {
-            Console.WriteLine($"{message} - Name: {Name}, Age: {Age}");
-        }
-
-        public void DisplayInformation(string message, int grade)
-        {
-            Console.WriteLine($"{message} - Name: {Name}, Age: {Age}, Grade: {grade}");
+            Console.WriteLine("Welcome to student management system.");
         }
     }
 }
