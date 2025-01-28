@@ -1,49 +1,34 @@
-namespace Encapsulation
+namespace Multiple_Inheritance
 {
-    internal class Employee
+    public class Employee : IPayable, IReportable
     {
-        // Fields
-        private string name;
-        private int employeeId;
-        private int salary;
+        public string Name { get; set; }
+        public string Department { get; set; }
 
-        // Constructor
-        public Employee(string name, int employeeId, int salary)
+        public Employee(string name, string department)
         {
-            this.name = name;
-            this.employeeId = employeeId;
-            this.salary = salary;
+            Name = name;
+            Department = department;
         }
 
-        // Properties to access and modify the fields
-        public string Name
+        public void ProcessSalary()
         {
-            get { return name; }
-            set { name = value; }
+            Console.WriteLine($"Salary processed for {Name} in {Department} department.");
         }
 
-        public int EmployeeId
+        public void GenerateReport()
         {
-            get { return employeeId; }
+            Console.WriteLine($"Generating report for {Name} in {Department} department.");
         }
 
-        public int Salary
+        void IReportable.Test()
         {
-            get { return salary; }
-            set
-            {
-                if (value >= 0)
-                    salary = value;
-                else
-                    Console.WriteLine("Salary cannot be negative");
-            }
+            Console.WriteLine("Test method from IReportable interface.");
         }
 
-        public void DisplayEmployeeInfo()
+        void IPayable.Test()
         {
-            Console.WriteLine($"EmployeeId: {EmployeeId}");
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Salary: {Salary}");
+            Console.WriteLine("Test method from IPayable interface.");
         }
     }
 }

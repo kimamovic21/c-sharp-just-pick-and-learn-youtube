@@ -1,36 +1,25 @@
-﻿namespace Interfaces_Demo
+﻿namespace Multiple_Inheritance
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Interfaces in C#");
+            Console.WriteLine("Multiple Inheritance in C#");
 
-            ICustomer customer1 = new Customer(
-                1, 
-                "Kerim", 
-                "Imamovic", 
-                "kerim.imamovic@example.com", 
-                "012-345-6789", 
-                new DateTime(1996, 11, 28), 
-                "Sarajevska 1"
-            );
+            // Create an Employee object
+            Employee employee = new Employee("John", "IT");
 
-            Console.WriteLine($"\nCustomer 1 Full Name: {customer1.GetFullName()}\n");
 
-            //customer.PrintCustomerDetails();
+            // Call methods from both interfaces
+            employee.ProcessSalary();
+            employee.GenerateReport();
 
-            Customer customer2 = new Customer(
-                2,
-                "John",
-                "Doe",
-                "john.doe@example.com",
-                "987-654-3210",
-                new DateTime(1990, 1, 1),
-                "Wall Street 1"
-            );
-            customer2.PrintCustomerDetails();
+            // Call IPayable's and IReportable's methods
+            ((IPayable)employee).Test();
+            ((IReportable)employee).Test();
 
+            // Keep console open
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }
