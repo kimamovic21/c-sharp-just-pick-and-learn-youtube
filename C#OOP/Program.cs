@@ -1,33 +1,35 @@
-﻿namespace Abstraction
+﻿namespace Interfaces_Demo
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Abstraction in C#");
+            Console.WriteLine("Interfaces in C#");
 
-            // Using abstraction to wrk with different types of students
-            Student undergraduateStudent = new UndergraduateStudent()
-            {
-                Name = "Kerim",
-                Age = 28,
-                Major = "Computer Science"
-            };
+            ICustomer customer1 = new Customer(
+                1, 
+                "Kerim", 
+                "Imamovic", 
+                "kerim.imamovic@example.com", 
+                "012-345-6789", 
+                new DateTime(1996, 11, 28), 
+                "Sarajevska 1"
+            );
 
-            Student graduateStudent = new GraduateStudent()
-            {
-                Name = "John",
-                Age = 30,
-                ResearchArea = "Artificial Intelligence"
-            };
+            Console.WriteLine($"\nCustomer 1 Full Name: {customer1.GetFullName()}\n");
 
-            // Common interface for displaying student information
-            undergraduateStudent.WelcomeMessage();
+            //customer.PrintCustomerDetails();
 
-            Console.WriteLine("\n-------------------");
-
-            undergraduateStudent.DisplayInformation();
-            graduateStudent.DisplayInformation();
+            Customer customer2 = new Customer(
+                2,
+                "John",
+                "Doe",
+                "john.doe@example.com",
+                "987-654-3210",
+                new DateTime(1990, 1, 1),
+                "Wall Street 1"
+            );
+            customer2.PrintCustomerDetails();
 
             Console.ReadKey();
         }
