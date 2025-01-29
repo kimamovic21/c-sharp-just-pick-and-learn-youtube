@@ -1,18 +1,15 @@
-﻿namespace TrimWhiteSpaces
+﻿namespace FindCurrentDateAndTime
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to remove white spaces from a string\n");
+            Console.WriteLine("How to get current date and time \n");
 
-            string string1 = "  Hello, World!  \n \n \n";
-            string trimmedString = string1.Trim();
-            string noSpaceString = trimmedString.Replace(" ", "");
+            DateTime currentDateTime = DateTime.Now; 
+            // Returns an object whose values is the current local date and time
 
-            Console.WriteLine(string1);
-            Console.WriteLine(trimmedString);
-            Console.WriteLine(noSpaceString);
+            Console.WriteLine(currentDateTime);
 
             Console.ReadKey();
         }
