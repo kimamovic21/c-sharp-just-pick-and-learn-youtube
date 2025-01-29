@@ -1,55 +1,30 @@
-﻿namespace ArraySorting
+﻿namespace ReverseString
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to sort an Array \n");
+            Console.WriteLine("How to reverse a string \n");
 
-            int[] intArray = { 5, 4, 2, 1, 3 };
-            string[] stringArray = { "Orange", "Apple", "Mango", "Watermelon" };
+            // Step 1: Take the input from the user
+            Console.WriteLine("Please enter the string: ");
+            string inputStr = Console.ReadLine();
 
-            Console.WriteLine("Integer Array before sorting:");
-            foreach (int num in intArray)
+            // Step 2: Logic to reverse a string
+            // Find the index of last character
+            int index = inputStr.Length - 1;
+            string revStr = "";
+
+            // Loop through the string in reverse order
+            while (index >= 0)
             {
-                Console.WriteLine(num);
+                revStr = revStr + inputStr[index];
+                index--;
             }
 
-            Console.WriteLine("\nString Array before sorting:");
-            foreach (var str in stringArray)
-            {
-                Console.WriteLine(str);
-            }
-
-            // Sorting an array in ascending order
-            Array.Sort(intArray);
-            Console.WriteLine("\nInteger Array after ascending sorting:");
-            foreach (int num in intArray)
-            {
-                Console.WriteLine(num);
-            }
-
-            Array.Sort(stringArray);
-            Console.WriteLine("\nString Array after ascending sorting:");
-            foreach (var str in stringArray)
-            {
-                Console.WriteLine(str);
-            }
-
-            // Sorting an array in descending order
-            Array.Reverse(intArray);
-            Console.WriteLine("\nInteger Array after descending sorting:");
-            foreach (int num in intArray)
-            {
-                Console.WriteLine(num);
-            }
-
-            Array.Reverse(stringArray);
-            Console.WriteLine("\nString Array after descending sorting:");
-            foreach (var str in stringArray)
-            {
-                Console.WriteLine(str);
-            }
+            // Step 2: Print the output
+            Console.WriteLine($"Original string: {inputStr}");
+            Console.WriteLine($"Reversed string: {revStr}");
 
             Console.ReadKey();
         }
