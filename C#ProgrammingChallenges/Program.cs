@@ -1,30 +1,22 @@
-﻿namespace ReverseString
+﻿namespace ConcatenateTwoStrings
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to reverse a string \n");
+            Console.WriteLine("How to join two strings \n");
 
-            // Step 1: Take the input from the user
-            Console.WriteLine("Please enter the string: ");
-            string inputStr = Console.ReadLine();
+            // Step 1: Take the input
+            Console.WriteLine("Enter the first string: ");
+            string str1 = Console.ReadLine();
+            Console.WriteLine("Enter the second string: ");
+            string str2 = Console.ReadLine();
 
-            // Step 2: Logic to reverse a string
-            // Find the index of last character
-            int index = inputStr.Length - 1;
-            string revStr = "";
+            // Step 2: Concatenate the strings
+            string str3 = string.Concat(str1, str2);
 
-            // Loop through the string in reverse order
-            while (index >= 0)
-            {
-                revStr = revStr + inputStr[index];
-                index--;
-            }
-
-            // Step 2: Print the output
-            Console.WriteLine($"Original string: {inputStr}");
-            Console.WriteLine($"Reversed string: {revStr}");
+            // Step 3: Print the output
+            Console.WriteLine($"Your concatenated string: {str3}");
 
             Console.ReadKey();
         }
