@@ -1,34 +1,21 @@
-﻿namespace ExtractSubstring
+﻿namespace FindStringLength
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to extract a substring from a given string \n");
+            Console.WriteLine("How to find length of a string \n");
 
-            // Step 1 - Ask the user to enter a string
-            Console.WriteLine("Enter the string: ");
+            // Step 1 - Take the input from a user
+            Console.WriteLine("Enter a string");
             string inputString = Console.ReadLine();
 
-            // Step 2 - Get the starting index
-            Console.WriteLine("Enter the starting index: ");
-            int startIndex = int.Parse(Console.ReadLine());
+            // Step 2 - Determine the length using Length property of a string
+            int length = inputString.Length;
 
-            // Step 3 - Get the length of the substring
-            Console.WriteLine("Enter the length of the substring: ");
-            int length = int.Parse(Console.ReadLine());
-
-            // Step 4 - Extract the substring using Substring method
-            if (startIndex >= 0 && startIndex < inputString.Length && length >= 0)
-            {
-                string extractedSubstring = inputString.Substring(startIndex, length);
-                Console.WriteLine("Extracted substring: " + extractedSubstring);
-            } 
-            else 
-            {
-                Console.WriteLine("Invalid input. Please make sure the starting index and length are within the bounds of the input string");
-            }
-
+            // Step 3 - Print the length on the console window
+            Console.WriteLine($"The length of the string is: {length}");
+                
             Console.ReadKey();
         }
     }
