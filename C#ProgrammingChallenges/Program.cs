@@ -1,43 +1,23 @@
-﻿namespace Palindrome
+﻿namespace CountWordsInSentence
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to check if a string is palindrome  \n");
+            Console.WriteLine("How to count number of words in a sentence \n");
 
-            // Step 1: Take input from user
-            Console.WriteLine("Enter a string: ");
-            string input = Console.ReadLine();
+            // Step 1: Ask the user to enter a sentence
+            Console.WriteLine("Enter a sentence: ");
+            string sentence = Console.ReadLine();
 
-            // Step 2: Convert to lowercase to ignore case sensitivity
-            input = input.ToLower();
+            // Step 2: Split the sentence into words using space as a separator
+            string[] words = sentence.Split(' ');
 
-            // Step 3: Compare characters to check if palindrome
-            int left = 0;
-            int right = input.Length - 1;
-            bool isPalindrome = true;
+            // Step 3: count the number of words
+            int wordsCount = words.Length;
 
-            while (left < right)
-            {
-                if (input[left] != input[right])
-                {
-                    isPalindrome = false;
-                    break;
-                }
-                left++;
-                right--;
-            }
-
-            // Step 4: Print the result
-            if (isPalindrome)
-            {
-                Console.WriteLine("The string is a palindrome.");
-            }
-            else
-            {
-                Console.WriteLine("The string is not a palindrome.");
-            }
+            // Step 4: Print the number of words
+            Console.WriteLine("The number of words in the sentence is: " + wordsCount);
 
             Console.ReadKey();
         }
