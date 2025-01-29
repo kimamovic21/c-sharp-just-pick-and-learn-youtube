@@ -1,35 +1,27 @@
-﻿namespace ArrayCombine
+﻿namespace Search
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to combine two arrays without duplicate values \n");
+            Console.WriteLine("How to find element \n");
 
-            int[] numbers1 = { 10,20,30,40,50 };
-            int[] numbers2 = { 40,50,60,70,80 };
+            string[] fruits = { "Orange", "Apple", "Mango", "Watermelon", "Avocado" };
+            string searchTerm = "Watermelon";
+            //string searchTerm = "Banana";
 
-            // Combine two arrays
-            int[] numbers = numbers1.Union(numbers2).ToArray();
+            // Searching for an element
+            string fruit = Array.Find(fruits, element => element.Equals(searchTerm));
 
-            Console.WriteLine("Array1:");
-            PrintArray(numbers1);
-
-            Console.WriteLine("\nArray2:");
-            PrintArray(numbers2);
-
-            Console.WriteLine("\nMerged array:");
-            PrintArray(numbers);
-
-            Console.ReadLine();
-        }
-
-        private static void PrintArray(int[] numbers)
-        {
-            foreach (var number in numbers)
+            if (!String.IsNullOrEmpty(fruit))
             {
-                Console.Write(number + ",");
+                Console.WriteLine($"Search successful: {fruit}");
+            } else
+            {
+                Console.WriteLine("Fruit not found!");
             }
+            
+            Console.ReadKey();
         }
     }
 }
