@@ -1,29 +1,40 @@
-﻿namespace FindDuplicateCharactersUsingLinq
+﻿namespace ReadAndDisplayMatrix
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How to find duplicate characters using LINQ \n");
+            Console.WriteLine("How to read and display matrix \n");
 
-            // Step 1: Ask the user to enter a string
-            Console.WriteLine("Please enter a string: ");
-            string str = Console.ReadLine();
+            // Step 1: Propmpt user for number of rows and columns
+            Console.Write("Enter the number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            Console.Write("Enter the number of columns: ");
+            int cols = int.Parse(Console.ReadLine());
 
-            // Step 2: Group the characters and filter the groups with more than one count using ling
-            var groups = str.GroupBy(c => c).Where(g => g.Count() > 1);
+            // Step 2: Create the matrix
+            int[,] matrix = new int[rows, cols];
 
-            // Step 3: Print the characters which occur more than once
-            if (groups.Any())
+            // Step 3: Read values into the matrix
+            Console.WriteLine("Enter the values for the matrix: ");
+
+            for (int i = 0; i < rows; i++) // rows
             {
-                foreach (var group in groups)
+                for (int j = 0; j < cols; j++) // columns
                 {
-                    Console.WriteLine($"{group.Key} - {group.Count()}");
+                    Console.Write("Enter values for [{0}, {1}]: ", i, j);
+                    matrix[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            else
+
+            // Step 4: Display the matrix
+            for (int i = 0; i < rows; i++) // rows
             {
-                Console.WriteLine("There is no duplicate character!");
+                for (int j = 0; j < cols; j++) // columns
+                {
+                    Console.Write("{0} ", matrix[i, j]);
+                }
+                Console.WriteLine();
             }
 
             Console.ReadKey();
