@@ -1,23 +1,42 @@
-﻿namespace StaticClassDemo
+﻿namespace AbstractClassDemo
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Static class - demo");
+            Console.WriteLine("Select Payment Method: ");
+            Console.WriteLine("1. Credit Card");
+            Console.WriteLine("2. Upi Payment");
+            Console.WriteLine("Enter your choice: ");
 
-            string testString = " Hello,          World! ";
+            int choice = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Original string: {testString}");
+            Payment payment = null;
 
-            // 1. Reverse a string
-            Console.WriteLine($"Reversed: {StringUtility.Reverse(testString)}");
+            Console.Write("Enter payment amount: ");
+            double amount = double.Parse(Console.ReadLine());
 
-            // 2. Count numbers of words in a string
-            Console.WriteLine($"Number of words: {StringUtility.WordCount(testString)}");
+            // Create appropriate payment object based on user choice
+            switch (choice)
+            {
+                case 1:
+                    payment = new CreditCardPayment();
+                    break;
+                case 2:
+                    payment = new UpiPayment();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice!");
+                    break;
+            }
 
-            // 3. To check if a string is Numeric
-            Console.WriteLine($"Is \"12345\" Numeric? {StringUtility.IsNumeric("12345")}");
+            // Process the payment
+            payment.ProcessPayment(amount);
+
+            // Show common transaction details
+            payment.PrintDetails(amount);
+
+            Console.WriteLine("Payment completed successfully!");
 
             Console.ReadKey();
         }
