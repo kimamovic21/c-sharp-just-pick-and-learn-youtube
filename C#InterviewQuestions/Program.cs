@@ -9,11 +9,22 @@ namespace SampleConsoleApp
     {
         static void Main(string[] args)
         {
-            using StreamReader reader = File.OpenText(@"C:\MyFiles\test-file.txt");
-            
-            string fileContent = reader.ReadToEnd();
+            string name;
 
-            Console.WriteLine("File content:\n" + fileContent);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            string message = "Hello ";
+            string name1 = "John";
+            string greeting = message + name1;
+            Console.WriteLine(greeting);
+
+            greeting = greeting.Replace("John", "Jane");
+
+            StringBuilder stringBuilder1 = new StringBuilder();
+            stringBuilder1.Append("Hi ");
+            stringBuilder1.Append("Jane");
+            Console.WriteLine(stringBuilder1.ToString());
+
             Console.ReadLine();
         }
     }
